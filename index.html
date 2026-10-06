@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>💱 Currency Converter</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="card">
+  <div class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</div>
+
+  <h1><span>💱</span> Currency Converter</h1>
+  <div class="subhead">Live exchange rates </div>
+
+  <div class="converter-box">
+    <!-- Amount -->
+    <div class="amount-block">
+      <label for="amountInput">Amount</label>
+      <div class="amount-input-wrapper">
+        <input type="number" id="amountInput" value="1" min="0" step="any" placeholder="0" />
+      </div>
+      <div class="quick-amounts">
+        <button data-amount="10">10</button>
+        <button data-amount="100">100</button>
+        <button data-amount="500">500</button>
+        <button data-amount="1000">1000</button>
+        <button data-amount="max">Max</button>
+      </div>
+    </div>
+
+    <!-- Currency selection -->
+    <div class="currency-pair">
+      <div class="currency-selector">
+        <label for="fromCurrency">From</label>
+        <select id="fromCurrency"></select>
+      </div>
+      <div class="swap-icon" id="swapBtn" title="Swap currencies">⇄</div>
+      <div class="currency-selector">
+        <label for="toCurrency">To</label>
+        <select id="toCurrency"></select>
+      </div>
+    </div>
+
+    <!-- Convert Button (NEW) -->
+    <button class="convert-btn" id="convertBtn">
+      <span>💱</span> Convert
+    </button>
+
+    <!-- Result -->
+    <div class="result-box">
+      <button class="copy-btn" id="copyBtn" title="Copy result">📋</button>
+      <div class="result-label">Converted amount</div>
+      <div class="result-value" id="resultValue">
+        0.00 <small id="resultCurrencyLabel"></small>
+      </div>
+      <div class="rate-info">
+        <span id="exchangeRateInfo">1 USD = 1 USD</span>
+        <span id="updateStatus">ready</span>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="history-section">
+      <div class="history-header">
+        <h3>📜 Recent Conversions</h3>
+        <button id="clearHistory">clear</button>
+      </div>
+      <div class="history-list" id="historyList">
+        <div class="history-item" style="opacity:0.5;justify-content:center;">
+          No conversions yet
+        </div>
+      </div>
+    </div>
+
+    <div class="error-message" id="errorMsg"></div>
+  </div>
+
+  <div class="footer-note">Rates from exchangerate-api · built with ❤️</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
